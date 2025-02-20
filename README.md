@@ -8,7 +8,8 @@ Esta API permite la gestión de vuelos, incluyendo la obtención de información
 **Método:** `GET`
 - **Endpoint:** `/api/vuelos`
 - **Descripción:** Devuelve una lista con todos los vuelos almacenados en la base de datos.
-- ![image](https://github.com/user-attachments/assets/fede01cf-9a6f-4b87-b5f3-067708cf53c8)
+
+  ![image](https://github.com/user-attachments/assets/fede01cf-9a6f-4b87-b5f3-067708cf53c8)
 
 
 ### 2️⃣ Obtener un vuelo por su ID
@@ -16,6 +17,7 @@ Esta API permite la gestión de vuelos, incluyendo la obtención de información
 - **Endpoint:** `/api/_id/{_id}`
 - **Descripción:** Busca un vuelo específico según su identificador único.
 - **Parámetro:** `{_id}` → ID del vuelo.
+  
  ![image](https://github.com/user-attachments/assets/6b1c59c5-2c04-4276-a59d-3747f45d7d85)
 
 
