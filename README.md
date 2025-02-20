@@ -27,11 +27,17 @@ Esta API permite la gestión de vuelos, incluyendo la obtención de información
 - **Descripción:** Permite registrar un nuevo vuelo en la base de datos.
 - **Cuerpo de la petición:** Debe enviarse un JSON con la información del vuelo.
 
+  ![image](https://github.com/user-attachments/assets/006cb420-b914-4287-a0a2-280937255e13)
+
+
 ### 4️⃣ Buscar vuelos por disponibilidad
 **Método:** `GET`
 - **Endpoint:** `/api/aeropuertos/{disponibilidad}`
 - **Descripción:** Filtra los vuelos según su disponibilidad (`Disponible` o `No disponible`).
 - **Parámetro:** `{disponibilidad}` → Estado de disponibilidad del aeropuerto.
+
+  ![image](https://github.com/user-attachments/assets/7ad69217-1eee-47c9-828a-f308381071a3)
+  
 
 ### 5️⃣ Actualizar un vuelo por ID
 **Método:** `PUT`
@@ -40,6 +46,9 @@ Esta API permite la gestión de vuelos, incluyendo la obtención de información
 - **Parámetro:** `{id}` → ID del vuelo a modificar.
 - **Cuerpo de la petición:** Debe enviarse un JSON con los nuevos valores del vuelo.
 
+  ![image](https://github.com/user-attachments/assets/704a4a61-80e9-446d-978a-86ca06dbf78e)
+
+
 ---
 
 ### 🛠 Tecnologías Utilizadas
@@ -47,11 +56,6 @@ Esta API permite la gestión de vuelos, incluyendo la obtención de información
 - MongoDB como base de datos
 - Maven para la gestión de dependencias
 
-### 🚀 Cómo Ejecutar la API
-1. Clonar el repositorio.
-2. Configurar la conexión con MongoDB en `application.properties`.
-3. Ejecutar la aplicación con `mvn spring-boot:run`.
-
 ### 📌 Autor
-Desarrollado por [Tu Nombre]
+Desarrollado por [Alberto López Cabello]
 
