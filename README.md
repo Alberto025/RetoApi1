@@ -18,7 +18,7 @@ Esta API permite la gestión de vuelos, incluyendo la obtención de información
 - **Descripción:** Busca un vuelo específico según su identificador único.
 - **Parámetro:** `{_id}` → ID del vuelo.
   
- ![image](https://github.com/user-attachments/assets/6b1c59c5-2c04-4276-a59d-3747f45d7d85)
+  ![image](https://github.com/user-attachments/assets/6b1c59c5-2c04-4276-a59d-3747f45d7d85)
 
 
 ### 3️⃣ Crear un nuevo vuelo
