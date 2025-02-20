@@ -1,5 +1,5 @@
 # API de Gestión de Vuelos
-
+He basado mi tarea en una base de datos de vuelos en json, utilizando MongoDB.
 Esta API permite la gestión de vuelos, incluyendo la obtención de información sobre vuelos, búsqueda por diferentes criterios, creación y actualización de vuelos.
 
 ## Endpoints Disponibles
@@ -8,6 +8,8 @@ Esta API permite la gestión de vuelos, incluyendo la obtención de información
 **Método:** `GET`
 - **Endpoint:** `/api/vuelos`
 - **Descripción:** Devuelve una lista con todos los vuelos almacenados en la base de datos.
+- ![image](https://github.com/user-attachments/assets/fede01cf-9a6f-4b87-b5f3-067708cf53c8)
+
 
 ### 2️⃣ Obtener un vuelo por su ID
 **Método:** `GET`
