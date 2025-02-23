@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title th:text="${vuelos.numvuelo}">Detalle del vuelo</title>
+  <link rel="stylesheet" href="/single.css">
+</head>
+<body>
+
+<h1 th:text="${vuelos.numvuelo}"></h1>
+
+<div class="vuelos-details">
+  <p><strong>Aeropuerto:</strong> <span th:text="${vuelos.aeropuerto}"></span></p>
+  <p><strong>Disponibilidad aeropuerto:</strong> <span th:text="${vuelos.disponibilidadaeropuerto}"></span></p>
+  <p><strong>Compañia:</strong> <span th:text="${vuelos.compañia}"></span></p>
+  <p><strong>Destino:</strong><span th:text="${vuelos.destino}"></span></p>
+  <p><strong>Hora de salida:</strong> <span th:text="${vuelos.salida}"></span></p>
+  <p><strong>Hora de llegada:</strong> <span th:text="${vuelos.llegada}"></span></p>
+  <p><strong>Precio:</strong> <span th:text="${vuelos.precio}"></span>€</p>
+</div>
+
+<!-- Botón para redirigir al formulario de edición -->
+<a th:href="@{'/web/' + ${vuelos._id} + '/edit'}" class="edit-button">Editar</a>
+
+
+
+<a href="/web/" class="back-link">Volver al listado</a>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listado de Vuelos</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<h1 th:text="${titulo}"></h1>
+
+<!-- Botón para crear un nuevo vuelo -->
+<a href="/web/new" class="create-button">Crear Nuevo Vuelo</a>
+
+<!-- Contenedor de vuelos en formato grid -->
+<div class="vuelos-container">
+  <div class="vuelo-card" th:each="vuelos:${vuelos}">
+    <a th:href="@{'/web/'+${vuelos._id}}">
+      <h2 th:text="${vuelos.numvuelo}"></h2>
+      <p><strong>Aeropuerto:</strong> <span th:text="${vuelos.aeropuerto}"></span></p>
+      <p><strong>Disponibilidad aeropuerto:</strong> <span th:text="${vuelos.disponibilidadaeropuerto}"></span></p>
+      <p><strong>Compañia:</strong> <span th:text="${vuelos.compañia}"></span></p>
+      <p><strong>Destino:</strong> <span th:text="${vuelos.destino}"></span></p>
+      <p><strong>Hora de salida:</strong> <span th:text="${vuelos.salida}"></span></p>
+      <p><strong>Hora de llegada:</strong> <span th:text="${vuelos.llegada}"></span></p>
+      <p><strong>Precio:</strong> <span th:text="${vuelos.precio}"></span>€</p>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
