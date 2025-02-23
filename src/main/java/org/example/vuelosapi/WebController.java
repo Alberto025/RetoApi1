@@ -7,8 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * Controlador para gestionar la interfaz web de la aplicación.
- * Permite visualizar, agregar, editar y actualizar vuelos en una interfaz HTML.
+ * Controlador para gestionar las vistas web relacionadas con los vuelos.
  */
 @Controller
 @RequestMapping("/web")
@@ -18,11 +17,10 @@ public class WebController {
     VuelosRepository vuelosRepository;
 
     /**
-     * Muestra la página principal con la lista de vuelos.
-     *
-     * @param session La sesión HTTP actual.
-     * @param model   Modelo para pasar atributos a la vista.
-     * @return La vista "index" con la lista de vuelos.
+     * Muestra el listado de todos los vuelos disponibles.
+     * @param session Sesión HTTP actual.
+     * @param model Modelo para pasar datos a la vista.
+     * @return Nombre de la vista "index".
      */
     @GetMapping("/")
     public String index(HttpSession session, Model model) {
@@ -33,11 +31,10 @@ public class WebController {
     }
 
     /**
-     * Muestra la información de un vuelo específico.
-     *
-     * @param model Modelo para pasar atributos a la vista.
-     * @param _id   ID del vuelo a buscar.
-     * @return La vista "single" con la información del vuelo o "404" si no se encuentra.
+     * Muestra los detalles de un vuelo específico.
+     * @param model Modelo para pasar datos a la vista.
+     * @param _id Identificador del vuelo.
+     * @return Nombre de la vista "single" si el vuelo existe, o "404" si no.
      */
     @GetMapping("/{_id}")
     public String single(Model model, @PathVariable String _id) {
@@ -51,9 +48,8 @@ public class WebController {
 
     /**
      * Muestra el formulario para crear un nuevo vuelo.
-     *
-     * @param model Modelo para pasar un objeto vacío de vuelo.
-     * @return La vista "new" con el formulario de creación.
+     * @param model Modelo para pasar datos a la vista.
+     * @return Nombre de la vista "new".
      */
     @GetMapping("/new")
     public String mostrarFormularioNuevoVuelo(Model model) {
@@ -62,24 +58,21 @@ public class WebController {
     }
 
     /**
-     * Guarda un nuevo vuelo en la base de datos.
-     *
-     * @param vuelo Objeto de tipo Vuelos con la información ingresada en el formulario.
-     * @return Redirección a la página principal después de guardar el vuelo.
+     * Procesa el formulario de creación de un nuevo vuelo.
+     * @param vuelo Objeto de tipo Vuelos con los datos ingresados.
+     * @return Redirección a la vista de listado de vuelos.
      */
     @PostMapping("/new")
-    public String crearHotel(@ModelAttribute Vuelos vuelo) {
+    public String crearVuelo(@ModelAttribute Vuelos vuelo) {
         vuelosRepository.save(vuelo);
         return "redirect:/web/";
     }
 
     /**
-     * Muestra el formulario de edición de un vuelo existente.
-     *
-     * @param _id   ID del vuelo a editar.
-     * @param model Modelo para pasar los datos del vuelo a la vista.
-     * @return La vista "edit" con el formulario de edición.
-     * @throws IllegalArgumentException si el ID del vuelo no es válido.
+     * Muestra el formulario de edición para un vuelo existente.
+     * @param _id Identificador del vuelo.
+     * @param model Modelo para pasar datos a la vista.
+     * @return Nombre de la vista "edit".
      */
     @GetMapping("{_id}/edit")
     public String mostrarFormularioEdicion(@PathVariable String _id, Model model) {
@@ -90,12 +83,10 @@ public class WebController {
     }
 
     /**
-     * Actualiza la información de un vuelo existente.
-     *
-     * @param _id    ID del vuelo a actualizar.
+     * Procesa la actualización de los datos de un vuelo existente.
+     * @param _id Identificador del vuelo a actualizar.
      * @param vuelos Objeto con los nuevos datos del vuelo.
-     * @return Redirección a la página principal después de la actualización.
-     * @throws IllegalArgumentException si el ID del vuelo no es válido.
+     * @return Redirección a la vista de listado de vuelos.
      */
     @PutMapping("{_id}/edit")
     public String actualizarVuelo(@PathVariable String _id, @ModelAttribute Vuelos vuelos) {
